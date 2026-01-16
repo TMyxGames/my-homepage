@@ -19,7 +19,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # 根据你本地的 Node 版本修改
+          node-version: '18' # 根据你本地的 Node 版本
 
       # 3. 安装依赖并打包
       - name: Install and Build
