@@ -36,5 +36,5 @@ jobs:
           SOURCE: "dist/" # 打包后的目录
           REMOTE_HOST: ${{ secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.SERVER_USER }}
-          TARGET: "/www/wwwroot/n0v0rland.xyz" # 刚才在宝塔里创建的网站根目录
+          TARGET: "/www/wwwroot/n0v0rland.xyz" # 刚才在宝塔里创建的网站根目录 
           EXCLUDE: "/node_modules/"
