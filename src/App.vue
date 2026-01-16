@@ -1,5 +1,5 @@
 <template>
-  <GlobalBackground></GlobalBackground>
+  <GlobalBackground :imgSrc="require('@/assets/backgrounds/黄昏.png')" />
 
   <div class="container">
 

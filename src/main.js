@@ -6,7 +6,7 @@ import axios from 'axios'
 import VueRuter from 'vue-router'
 
 import './styles/reset.css'
-import GlobalHeaderJump from './router/GlobalHeaderJump'
+import GlobalHeaderJump from './router/GlobalJump'
 
 const app = createApp(App)
 
