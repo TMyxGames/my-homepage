@@ -40,7 +40,7 @@ jobs:
           # Rsync配置
           SOURCE: "dist/"
           TARGET: ${{ secrets.TARGET }}
-          ARGS: "-avzr --delete"
+          ARGS: "-avzr --delete --exclude=.*"
           EXCLUDE: "/node_modules/,/.git/"  # 排除更多无用目录
 
           # 部署后脚本（关键：修复权限）

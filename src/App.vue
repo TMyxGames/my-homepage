@@ -21,6 +21,7 @@
     <router-view></router-view>
 
     <h2>🚧页面正在施工中🚧</h2>
+    <h2>❀ 最后更新日期：2026 / 1 / 18 ❀</h2>
     <a class="beian" href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2026000730号-1</a>
   </div>
 
@@ -66,6 +67,8 @@ import GlobalHeaderOption from './components/GlobalHeaderOption.vue'
     font-family: '晴雪体';
     text-align: center;
     color: rgb(255, 255, 255);
+
+    padding-bottom: 5rem;
   }
 
   .header {
