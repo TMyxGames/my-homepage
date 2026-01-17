@@ -22,7 +22,7 @@
 
     <h2>🚧页面正在施工中🚧</h2>
     <h2>❀ 最后更新日期：2026 / 1 / 18 ❀</h2>
-    <a class="beian" href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2026000730号-1</a>
+    <a class="beian" href="http://beian.miit.gov.cn/" target="_blank">桂ICP备2026000730号-1</a>
   </div>
 
 </template>
