@@ -1,6 +1,6 @@
 <template>
-  <GlobalBackground :imgSrc="require('@/assets/backgrounds/黄昏.png')" />
-
+  <!-- <GlobalBackground :imgSrc="require('@/assets/backgrounds/黄昏.png')" /> -->
+  <GlobalBackground autoTimeChange/>
   <div class="container">
 
     <GlobalHeader class="header">
