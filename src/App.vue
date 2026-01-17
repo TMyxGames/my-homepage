@@ -38,7 +38,7 @@ import GlobalHeaderOption from './components/GlobalHeaderOption.vue'
         options: [
           {id:1, name: "主页", path: '/PageHome'},
           {id:2, name: "信息", path: '/PageInfo'}, 
-          // {id:3, name: "联系我", path: '/PageContact'},
+          // {id:3, name: "联系我", path: '/PageContact'}, 
           // {id:4, name: "测试页面", path: '/PageTest'}, 
           // {id:5, name: "歌词", path: '/PageLyrics'}, 
         ]
