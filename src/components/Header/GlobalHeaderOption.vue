@@ -1,4 +1,6 @@
 <template>
+    <!-- <button class="option">{{ name }}</button> -->
+
     <div class="option-container" :class="{ 'is-active': active }">
         <span class="option-text">{{ name }}</span>
     </div>
@@ -18,6 +20,7 @@
 </script>
 
 <style scoped>
+
     .option-container {
         display: inline-flex;
         align-items: center;
@@ -34,8 +37,7 @@
     }
     
     .option-text {
-        font-family: 'HarmonyOS Sans SC';
-        font-weight: 900;
+        /* font-weight: 900; */
         font-size: 20px;
         user-select: none;
         color: #F8F6F6;
@@ -53,7 +55,7 @@
         left: 0;
         width: 0;
         height: 5px;
-        background-color: #ff2e63;
+        background-color: #fc85ae;
         backdrop-filter: blur(10px);
         transform-origin: left;
         transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -71,8 +73,33 @@
         bottom: 2px;
         width: 100%;
         height: 10px;
-        background-color: #ff2e63; /* 红色下划线 */
+        background-color: #fc85ae; /* 红色下划线 */
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
     }
+
+    /* 已弃用 */
+    /* .option {
+        border: 0px;
+        background-color: rgba(255, 255, 255, 25%);
+        backdrop-filter: blur(10px);
+        border-radius: 37.5px;
+
+        font-family: '晴雪体';
+        font-size: 28px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+    }
+
+    .option:focus {
+        border: 0px;
+        background-color: rgba(255, 255, 255, 50%);
+        backdrop-filter: blur(10px);
+        border-radius: 37.5px;
+
+        font-family: '晴雪体';
+        font-size: 28px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+    } */
 </style>

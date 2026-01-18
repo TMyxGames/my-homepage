@@ -20,21 +20,18 @@
     .home-container {
         height: 100%;
         width: 100%;
-        margin-top: 7rem;
         padding: 2rem;
         
         box-sizing: border-box;
-        overflow: visible;
+        background-color: rgba(255, 255, 255, 25%);
+        backdrop-filter: blur(10px);
+        border-radius: 1rem;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 5rem;
-
-        background-color: rgba(255, 255, 255, 25%);
-        backdrop-filter: blur(10px);
-        border-radius: 2rem;
     }
 
     .title {
