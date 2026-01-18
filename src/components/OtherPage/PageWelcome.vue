@@ -7,7 +7,13 @@
             <router-link class="link" to="/PageHome">点击进入</router-link>
         </div>
 
-        <a class="beian" href="http://beian.miit.gov.cn/" target="_blank">桂ICP备2026000730号-1</a>
+        <a class="beian"
+            href="http://beian.miit.gov.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            桂ICP备2026000730号-1
+        </a>
     </div>
 </template>
 

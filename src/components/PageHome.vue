@@ -35,15 +35,11 @@
     }
 
     .title {
-        font-family: '晴雪体';
-        font-size: 10rem;
-        color: rgb(255, 255, 255);
+        font-size: clamp(5rem, 10vw, 10rem);
     }
 
     .subtitle {
-        font-family: '晴雪体';
-        font-size: 5rem;
-        color: rgb(255, 255, 255);
+        font-size: clamp(2rem, 5vw, 5rem);
     }
 
 

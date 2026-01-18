@@ -29,6 +29,6 @@
     }
 
     .title {
-        font-size: 150px;
+        font-size: clamp(5rem, 10vw, 10rem);
     }
 </style>
