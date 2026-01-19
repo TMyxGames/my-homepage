@@ -3,21 +3,44 @@
         <label class="title">你好</label>
         <label class="subtitle">欢迎来到我的个人页面</label>
     </div>
-    <div class="home-container">
-        <label class="subtitle emoji">꒰ᐢ⸝⸝•༝•⸝⸝ᐢ꒱</label>
-        <label class="subtitle">目前页面还在施工中...</label>
-        <!-- <h2 class="subtitle">(ˆ꜆ .   ̫  . ).   ̫  . ꜀ˆ)</h2> -->
-    </div>
+
+    <section class="home-container">
+        <!-- <div class="top">
+            <div class="my-info">
+                <img class="avatar" src="@/assets/兔兔.jpg" alt="Avatar" />
+            </div>
+            <div class="introduce">
+
+            </div>
+            
+        </div> -->
+
+        <div class="second">
+            <label class="subtitle emoji">꒰ᐢ⸝⸝•༝•⸝⸝ᐢ꒱</label>
+            <label class="subtitle">目前页面还在施工中...</label>
+            <!-- <h2 class="subtitle">(ˆ꜆ .   ̫  . ).   ̫  . ꜀ˆ)</h2> -->
+        </div>
+
+
+    </section>
+    
 </template>
 
 <script>
+    import MarkdownIt from 'markdown-it';
+
     export default {
         name: 'PageHome',
         components: {
         },
         data() {
             return {
-                
+                markdownRaw: '',
+                md: new MarkdownIt({
+                    html: true,
+                    linkify: true,
+                    typographer: true,
+                }),
             }
         },
         methods: {
@@ -47,6 +70,18 @@
     .home-container {
         height: 100%;
         width: 100%;
+        
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .top {
+        height: 100%;
+        width: 100%;
         padding: clamp(1rem, 2vw, 2rem);
         
         box-sizing: border-box;
@@ -61,7 +96,54 @@
         align-items: center;
         gap: 5rem; */
         display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: clamp(1rem, 2vw, 2rem);
+    }
 
+    .my-info {
+        height: 100%;
+        width: 100%;
+        border-radius: 1rem;
+
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow: hidden;
+        background-color: var(--card-bg);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .avatar {
+        height: clamp(5rem, 10vw, 10rem);
+        width: clamp(5rem, 10vw, 10rem);
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .introduce {
+        height: 10rem;
+        width: 100%;
+        border-radius: 1rem;
+        background-color: var(--card-bg);
+    }
+
+    .second {
+        height: 100%;
+        width: 100%;
+        padding: clamp(1rem, 2vw, 2rem);
+        
+        box-sizing: border-box;
+        background-color: var(--glass-bg);
+        color: var(--glass-text);
+        backdrop-filter: blur(10px);
+        border-radius: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .title {

@@ -5,7 +5,7 @@
     --glass-text: rgba(255, 255, 255);
     
     /* 小容器 */
-    --card-bg: rgba(255, 255, 255, 75%);
+    --card-bg: rgba(255, 255, 255, 80%);
     --card-text: #222831;
     
     /* 装饰 */
@@ -17,11 +17,11 @@
 /* 深色模式 */
 html.dark {
     /* 大容器 */
-    --glass-bg: rgba(0, 0, 0, 40%);
-    --glass-text: rgb(200, 200, 200);
+    --glass-bg: rgba(64, 64, 64, 40%);
+    --glass-text: rgb(220, 220, 220);
     
     /* 小容器 */
-    --card-bg: rgba(0, 0, 0, 75%);
+    --card-bg: rgba(200, 200, 200, 0.8);
     --card-text: rgba(255, 255, 255);
     
     /* 装饰 */
