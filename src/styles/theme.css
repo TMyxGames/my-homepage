@@ -1,0 +1,38 @@
+/* 浅色模式（默认） */
+:root {
+    /* 大容器 */
+    --glass-bg: rgba(255, 255, 255, 20%);
+    --glass-text: rgba(255, 255, 255);
+    
+    /* 小容器 */
+    --card-bg: rgba(255, 255, 255, 75%);
+    --card-text: #222831;
+    
+    /* 装饰 */
+    /* --border-color: rgba(255, 255, 255, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --blur-bg: rgba(255, 255, 255, 0.25); */
+}
+  
+/* 深色模式 */
+html.dark {
+    /* 大容器 */
+    --glass-bg: rgba(0, 0, 0, 40%);
+    --glass-text: rgb(200, 200, 200);
+    
+    /* 小容器 */
+    --card-bg: rgba(0, 0, 0, 75%);
+    --card-text: rgba(255, 255, 255);
+    
+    /* 装饰 */
+    /* --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --blur-bg: rgba(17, 24, 39, 0.7); */
+}
+  
+/* 过渡动画 - 让主题切换更平滑 */
+/* body { */
+    /* background-color: var(--glass-bg); */
+    /* color: var(--card-text);
+    transition: all 0.5s ease; */
+/* } */

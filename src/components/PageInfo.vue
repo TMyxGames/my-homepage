@@ -18,7 +18,8 @@
         padding: 2rem;
         
         box-sizing: border-box;
-        background-color: rgba(255, 255, 255, 25%);
+        background-color: var(--glass-bg);
+        color: var(--glass-text);
         backdrop-filter: blur(10px);
         border-radius: 1rem;
 

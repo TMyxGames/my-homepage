@@ -1,7 +1,7 @@
 <template>
     <div class="footer-container">
         <label class="prompt">🚧页面正在施工中🚧</label>
-        <label class="prompt">❀ 最后更新日期：2026 / 1 / 19 ❀</label>
+        <label class="prompt">❀ 最后更新日期：2026 / 1 / 20 ❀</label>
         <a class="beian"
             href="http://beian.miit.gov.cn/"
             target="_blank"
@@ -26,6 +26,8 @@
         margin-top: 1rem;
         margin-bottom: 1rem;
 
+        color: var(--glass-text);
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -37,7 +39,8 @@
 
     .beian {
         font-size: 16px;
+        color: inherit;
         /* text-decoration: none; */
-        color: rgb(255, 255, 255);
+        /* color: rgb(255, 255, 255); */
     }
 </style>

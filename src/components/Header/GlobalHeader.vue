@@ -23,7 +23,9 @@
             </router-link>
         </div>
         
-        
+        <div class="control-area">
+            <ThemeSwitcher></ThemeSwitcher>
+        </div>
 
     </div>
 </template>
@@ -31,10 +33,13 @@
 
 <script>
     import GlobalHeaderOption from './GlobalHeaderOption.vue'
+    import ThemeSwitcher from '../ThemeSwitcher.vue';
+
     export default {
         name: 'GlobalHeader',
         components: {
-            GlobalHeaderOption
+            GlobalHeaderOption,
+            ThemeSwitcher
         },
         props: {
 
@@ -47,7 +52,8 @@
                     // {id:3, name: "联系我", path: '/PageContact'}, 
                     // {id:4, name: "测试页面", path: '/PageTest'}, 
                     // {id:5, name: "歌词", path: '/PageLyrics'}, 
-                ]
+                ],
+                theme: false,
             }
         },
  
@@ -59,7 +65,7 @@
         position: fixed;
         z-index: 100;
 
-        top: 0;
+        top: 0.5rem;
         width: 100%;
         height: 4rem;
         max-width: 100rem;
@@ -70,12 +76,14 @@
         align-items: center;
         justify-self: center;
         gap: 2rem;
+        /* padding: 0.25rem; */
 
         box-sizing: border-box;
-        background-color: rgba(255, 255, 255, 25%);
+        background-color: var(--glass-bg);
         backdrop-filter: blur(10px);
-        border-radius: 0 0 1rem 1rem;
+        border-radius: 1rem;
 
+        transition: all 0.25s ease;
     }
 
     .logo-area {
@@ -89,16 +97,55 @@
     }
 
     .logo {
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
         border-radius: 50%;
 
     }
 
     .option-area {
+        height: 100%;
+
         display: flex;
         align-items: center;
         gap: 1rem;
+    }
+
+    .control-area {
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+
+        margin-left: auto;
+    }
+
+    /* 小于页面宽度 */
+    @media (max-width: 100rem) { 
+        .header-container {
+            top: 0;
+            border-radius: 0 0 1rem 1rem;
+
+        }
+    }
+
+    /* 平板屏幕 */
+    @media (max-width: 768px) { 
+        .header-container {
+            top: 0;
+            border-radius: 0 0 1rem 1rem;
+        }
+    }
+
+    /* 移动屏幕 */
+    @media (max-width: 640px) {
+        .header-container {
+            top: 0;
+            border-radius: 0 0 1rem 1rem;
+            /* height: 3.5rem; */
+        }
     }
 
 </style>

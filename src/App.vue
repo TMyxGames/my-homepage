@@ -17,7 +17,7 @@
 
   body, #app, button, input, select, textarea {
     font-family: '晴雪体';
-    color: rgb(255, 255, 255);
+    /* color: rgb(255, 255, 255); */
   }
 
 </style>
