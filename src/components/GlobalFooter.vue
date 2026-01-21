@@ -1,7 +1,7 @@
 <template>
     <div class="footer-container">
         <label class="prompt">🚧页面正在施工中🚧</label>
-        <label class="prompt">❀ 最后更新日期：2026 / 1 / 20 ❀</label>
+        <label class="prompt">❀ 最后更新日期：2026 / 1 / 22 ❀</label>
         <a class="beian"
             href="http://beian.miit.gov.cn/"
             target="_blank"
