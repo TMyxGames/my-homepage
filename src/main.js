@@ -3,19 +3,17 @@ import App from './App.vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import axios from 'axios'
-import VueRuter from 'vue-router'
+import router from './router/GlobalJump'
 
 import './styles/reset.css'
 import './styles/theme.css'
-import GlobalHeaderJump from './router/GlobalJump'
 
 const app = createApp(App)
 
 app.config.globalProperties.$http = axios
-axios.defaults.baseURL = 'http://localhost:8081'
+axios.defaults.baseURL = 'http://localhost:9090'
 
-app.use(VueRuter)
 app.use(ElementPlus)
-app.use(GlobalHeaderJump)
+app.use(router)
 
 app.mount('#app')

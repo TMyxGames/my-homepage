@@ -5,15 +5,18 @@
     </div>
 
     <section class="home-container">
-        <!-- <div class="top">
+        <div class="top">
             <div class="my-info">
                 <img class="avatar" src="@/assets/兔兔.jpg" alt="Avatar" />
+                <div class="info"> 
+                    <label class="name">❀花海寻梦❀</label>
+                </div>
             </div>
-            <div class="introduce">
+            <div class="introduce markdown-body" v-html="markdownHtml">
 
             </div>
             
-        </div> -->
+        </div>
 
         <div class="second">
             <label class="subtitle emoji">꒰ᐢ⸝⸝•༝•⸝⸝ᐢ꒱</label>
@@ -28,6 +31,7 @@
 
 <script>
     import MarkdownIt from 'markdown-it';
+    import introduce from '@/assets/content/introduce.md?raw';
 
     export default {
         name: 'PageHome',
@@ -35,7 +39,7 @@
         },
         data() {
             return {
-                markdownRaw: '',
+                markdownRaw: introduce,
                 md: new MarkdownIt({
                     html: true,
                     linkify: true,
@@ -43,8 +47,13 @@
                 }),
             }
         },
+        computed: {
+            markdownHtml() {
+                return this.md.render(this.markdownRaw || '');
+            }
+        },
         methods: {
-            
+
         }
     }
 
@@ -101,32 +110,54 @@
     }
 
     .my-info {
-        height: 100%;
+        height: 12rem;
         width: 100%;
         border-radius: 1rem;
 
-        padding: 1rem;
+        padding: clamp(1rem, 2vw, 2rem);
         box-sizing: border-box;
         overflow: hidden;
         background-color: var(--card-bg);
 
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        gap: clamp(0.5rem, 2vw, 2rem);
     }
 
     .avatar {
-        height: clamp(5rem, 10vw, 10rem);
-        width: clamp(5rem, 10vw, 10rem);
+        height: clamp(5rem, 7vw, 7rem);
+        width: clamp(5rem, 7vw, 7rem);
         border-radius: 50%;
         object-fit: cover;
     }
 
-    .introduce {
-        height: 10rem;
+    .info {
+        height: 100%;
         width: 100%;
+
+        color: var(--card-text);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .name {
+        font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+    }
+
+    .introduce {
+        height: 12rem;
+        width: 100%;
+
+        padding: clamp(1rem, 2vw, 2rem);
+        box-sizing: border-box;
         border-radius: 1rem;
+
         background-color: var(--card-bg);
+        color: var(--card-text)
     }
 
     .second {

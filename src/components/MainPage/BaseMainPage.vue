@@ -1,6 +1,6 @@
 <template>
-    <!-- <GlobalBackground :imgSrc="require('@/assets/backgrounds/星月.jpg')" /> -->
-    <GlobalBackground autoTimeChange/>
+    <GlobalBackground :imgSrc="defaultImg" />
+    <!-- <GlobalBackground autoTimeChange/> -->
 
     <GlobalHeader></GlobalHeader>
     <div class="main-page-container">
@@ -17,12 +17,13 @@
     import GlobalBackground from '@/components/GlobalBackground.vue'
     import GlobalHeader from '@/components/Header/GlobalHeader.vue'
     import GlobalFooter from '@/components/GlobalFooter.vue'
+    import defaultImg from '@/assets/backgrounds/星月.jpg'
   
     export default {
         name: 'App',
         data() {
             return {
-            
+                defaultImg: defaultImg,
             }
         },
         components: {
