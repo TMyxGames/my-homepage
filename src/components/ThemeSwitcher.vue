@@ -6,7 +6,7 @@
           :active-icon="Moon"
           :inactive-icon="Sunny"
           @change="toggleTheme"
-          style="--el-switch-on-color: #511e78; --el-switch-off-color: #fc85ae"
+          style="--el-switch-on-color: #7e80ff; --el-switch-off-color: #fc85ae"
         />
     </div>
 </template>

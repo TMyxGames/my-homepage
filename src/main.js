@@ -7,11 +7,15 @@ import router from './router/GlobalJump'
 
 import './styles/reset.css'
 import './styles/theme.css'
+import './styles/BDmarkdown.css'
+import md from './utils/markdown'
 
 const app = createApp(App)
 
 app.config.globalProperties.$http = axios
 axios.defaults.baseURL = 'http://localhost:9090'
+
+app.config.globalProperties.$md = md
 
 app.use(ElementPlus)
 app.use(router)

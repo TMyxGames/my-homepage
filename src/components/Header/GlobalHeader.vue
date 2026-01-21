@@ -48,7 +48,7 @@
             return {
                 options: [
                     {id:1, name: "主页", path: '/PageHome'},
-                    {id:2, name: "文章", path: '/PageContent'}, 
+                    {id:2, name: "样式", path: '/PageContent'}, 
                     // {id:3, name: "联系我", path: '/PageContact'}, 
                     // {id:4, name: "测试页面", path: '/PageTest'}, 
                     // {id:5, name: "歌词", path: '/PageLyrics'}, 
@@ -80,6 +80,7 @@
 
         box-sizing: border-box;
         background-color: var(--glass-bg);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 25%);
         backdrop-filter: blur(10px);
         border-radius: 1rem;
 

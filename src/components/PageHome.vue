@@ -12,8 +12,8 @@
                     <label class="name">❀花海寻梦❀</label>
                 </div>
             </div>
-            <div class="introduce markdown-body" v-html="markdownHtml">
-
+            <div class="introduce-area">
+                <div class="bd-markdown" v-html="$md.render(markdownRaw)"></div>
             </div>
             
         </div>
@@ -30,8 +30,8 @@
 </template>
 
 <script>
-    import MarkdownIt from 'markdown-it';
     import introduce from '@/assets/content/introduce.md?raw';
+    import testmd from '@/assets/content/test.md?raw';
 
     export default {
         name: 'PageHome',
@@ -40,16 +40,6 @@
         data() {
             return {
                 markdownRaw: introduce,
-                md: new MarkdownIt({
-                    html: true,
-                    linkify: true,
-                    typographer: true,
-                }),
-            }
-        },
-        computed: {
-            markdownHtml() {
-                return this.md.render(this.markdownRaw || '');
             }
         },
         methods: {
@@ -96,6 +86,7 @@
         box-sizing: border-box;
         background-color: var(--glass-bg);
         color: var(--glass-text);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 25%);
         backdrop-filter: blur(10px);
         border-radius: 1rem;
 
@@ -110,7 +101,7 @@
     }
 
     .my-info {
-        height: 12rem;
+        height: 100%;
         width: 100%;
         border-radius: 1rem;
 
@@ -148,8 +139,8 @@
         font-size: clamp(0.7rem, 1.5vw, 1.5rem);
     }
 
-    .introduce {
-        height: 12rem;
+    .introduce-area {
+        height: 100%;
         width: 100%;
 
         padding: clamp(1rem, 2vw, 2rem);

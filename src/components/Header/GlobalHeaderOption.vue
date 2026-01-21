@@ -51,11 +51,14 @@
         content: '';
         position: absolute;
         z-index: -1;
-        bottom: -5px;
+
+        bottom: -0.25rem;
         left: 0;
         width: 0;
-        height: 5px;
-        background-color: #fc85ae;
+        height: 0.3rem;
+
+        border-radius: 1rem;
+        background-color: var(--text-hightlight);
         backdrop-filter: blur(10px);
         transform-origin: left;
         transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -70,10 +73,11 @@
     }
 
     .is-active .option-text::after {
-        bottom: 2px;
+        bottom: 0.15rem;
         width: 100%;
-        height: 10px;
-        background-color: #fc85ae; /* 红色下划线 */
+        height: 0.55rem;
+
+        background-color: var(--text-hightlight); /* 红色下划线 */
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
     }

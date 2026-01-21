@@ -8,10 +8,15 @@
     --card-bg: rgba(255, 255, 255, 80%);
     --card-text: #222831;
     
-    /* 装饰 */
-    /* --border-color: rgba(255, 255, 255, 0.3);
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --blur-bg: rgba(255, 255, 255, 0.25); */
+    /* 颜色 */
+    --text-hightlight: #fc85ae;
+    --text-link: #8b2f97;
+    --code-bg: rgba(32, 32, 32, 80%);
+
+    --text-danger: #f12b6b;
+    --text-warning: #f9c23c;
+    --text-success: #07c160;
+
 }
   
 /* 深色模式 */
@@ -24,15 +29,19 @@ html.dark {
     --card-bg: rgba(32, 32, 32, 80%);
     --card-text: rgb(220, 220, 220);
     
-    /* 装饰 */
-    /* --border-color: rgba(255, 255, 255, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --blur-bg: rgba(17, 24, 39, 0.7); */
+    /* 颜色 */
+    --text-hightlight: #7e80ff;
+    --text-link: #cf56a1;
+    --code-bg: rgba(72, 72, 72, 80%);
+
+    --text-danger: #f12b6b;
+    --text-warning: #f9c23c;
+    --text-success: #07c160;
 }
   
 /* 过渡动画 - 让主题切换更平滑 */
-/* body { */
-    /* background-color: var(--glass-bg); */
-    /* color: var(--card-text);
-    transition: all 0.5s ease; */
-/* } */
+*, *::before, *::after {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
