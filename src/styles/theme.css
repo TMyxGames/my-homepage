@@ -2,7 +2,7 @@
 :root {
     /* 大容器 */
     --glass-bg: rgba(255, 255, 255, 20%);
-    --glass-text: rgba(255, 255, 255);
+    --glass-text: rgba(225, 225, 225);
     
     /* 小容器 */
     --card-bg: rgba(255, 255, 255, 80%);
@@ -18,7 +18,7 @@
 html.dark {
     /* 大容器 */
     --glass-bg: rgba(64, 64, 64, 20%);
-    --glass-text: rgb(255, 255, 255);
+    --glass-text: rgb(225, 225, 225);
     
     /* 小容器 */
     --card-bg: rgba(32, 32, 32, 80%);

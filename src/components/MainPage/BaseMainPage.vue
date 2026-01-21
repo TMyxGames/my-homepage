@@ -1,6 +1,6 @@
 <template>
-    <GlobalBackground :imgSrc="defaultImg" />
-    <!-- <GlobalBackground autoTimeChange/> -->
+    <!-- <GlobalBackground :imgSrc="defaultImg" /> -->
+    <GlobalBackground autoTimeChange/>
 
     <GlobalHeader></GlobalHeader>
     <div class="main-page-container">
