@@ -6,4 +6,6 @@
     font-size: 16px;
     font-family: "晴雪体", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }

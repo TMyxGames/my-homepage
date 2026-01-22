@@ -1,4 +1,6 @@
 .bd-markdown { 
+    line-height: 1.6;
+
     font-family: '晴雪体';
     color: var(--card-text);
 }
@@ -157,7 +159,11 @@
 
 /* 粗体 */
 .bd-markdown strong {
-    font-weight: 600;
+    font-weight: 500;
+    color: var(--text-hightlight);
+    text-shadow: 0.05rem 0.05rem 0.05rem var(--card-text);
+
+    /* -webkit-text-stroke: 0.05rem var(--text-hightlight); */
 }
 
 /* 斜体 */
@@ -171,21 +177,45 @@
 
     position: relative;
     isolation: isolate;
+
+    /* text-decoration: none;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    display: inline;
+
+    background-image: 
+        radial-gradient(circle at right, var(--text-hightlight) 0.3rem, transparent 0.3rem),
+        radial-gradient(circle at left, var(--text-hightlight) 0.3rem, transparent 0.3rem),
+        linear-gradient(var(--text-hightlight), var(--text-hightlight));
+
+    background-repeat: no-repeat;
+
+    background-size: 
+        0.6rem 0.6rem,
+        0.6rem 0.6rem,
+        calc(100% - 1.4rem) 0.6rem;
+        
+    background-position: 
+        left bottom 0.1rem, 
+        right bottom 0.1rem, 
+        center bottom 0.1rem; */
 }
 
-.bd-markdown u::after { 
+.bd-markdown u::before { 
+    box-sizing: border-box;
     content: '';
     position: absolute;
     
     left: 50%;
     transform: translateX(-50%);
     bottom: 0.1rem;
-    width: 105%;
+    width: 100%;
     height: 0.6rem;
     z-index: -1;
 
     border-radius: 1rem;
     background-color: var(--text-hightlight);
+    box-decoration-break: clone;
 }
 
 /* 删除线 */
@@ -204,7 +234,7 @@
     transform: 
         translateY(-50%)
         translateX(-50%);
-    width: 105%;
+    width: 100%;
     height: 0.25rem;
 
     border-radius: 1rem;
@@ -235,7 +265,7 @@
 
 /* 高亮 */
 .bd-markdown mark { 
-    padding: 0.1rem 0.3rem;
+    padding: 0rem 0.2rem;
     border-radius: 0.5rem;
 
     background-color: var(--text-hightlight);
@@ -245,6 +275,7 @@
 /* 代码 */
 .bd-markdown pre { 
     font-family: 'JetBrains Mono', '晴雪体', monospace;
+    src: url('./assets/fonts/JetBrainsMono-Regular.woff2') format('opentype');
     overflow-x: auto;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -264,7 +295,7 @@
 .bd-markdown :not(pre) > code { 
     font-family: inherit;
 
-    padding: 0.1rem 0.3rem;
+    padding: 0rem 0.2rem;
     border-radius: 0.5rem;
 
     color: var(--glass-text);

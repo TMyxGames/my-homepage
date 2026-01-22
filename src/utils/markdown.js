@@ -1,5 +1,6 @@
 import MarkdownIt from 'markdown-it';
 import mark from 'markdown-it-mark';
+import ins from 'markdown-it-ins';
 import markdownItTaskLists from 'markdown-it-task-lists';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github-dark.css';
@@ -21,7 +22,15 @@ const md = new MarkdownIt({
     },
 
 });
+
 md.use(mark);
+md.use(ins);
 md.use(markdownItTaskLists);
+
+md.renderer.rules.strong_open = () => '<strong><span>';
+md.renderer.rules.strong_close = () => '</span></strong>';
+
+md.renderer.rules.ins_open = () => '<u><span>';
+md.renderer.rules.ins_close = () => '</span></u>';
 
 export default md;

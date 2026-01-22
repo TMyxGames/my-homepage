@@ -181,6 +181,9 @@
         .banner-container {
             height: 28rem;
         }
+        .top {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* 移动屏幕 */

@@ -43,8 +43,8 @@
     }
 
     .welcome-container {
-        height: 30rem;
-        width: 30rem;
+        height: clamp(20rem, 30vw, 30rem);
+        width: clamp(20rem, 30vw, 30rem);
 
         box-sizing: border-box;
         background-color: rgba(255, 255, 255, 75%);
@@ -60,12 +60,12 @@
     }
 
     .text {
-        font-size: 36px;
+        font-size: clamp(2rem, 3vw, 3rem);
         color: rgb(0, 0, 0);
     }
 
     .link {
-        font-size: 28px;
+        font-size: clamp(1.5rem, 2vw, 2rem);
         color: #fc85ae;
     }
 
@@ -76,4 +76,18 @@
 
         /* margin-top: auto; */
     }
+
+    /* 平板屏幕 */
+    /* @media (max-width: 768px) { 
+        .welcome-container {
+
+        }
+    } */
+
+    /* 移动屏幕 */
+    /* @media (max-width: 640px) { 
+        .welcome-container {
+
+        }
+    } */
 </style>
