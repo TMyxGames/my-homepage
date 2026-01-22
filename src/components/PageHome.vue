@@ -5,37 +5,42 @@
     </div>
 
     <section class="home-container">
-        <div class="top">
+
+        <glass-layer class="top">
             <div class="my-info">
-                <img class="avatar" src="@/assets/兔兔.jpg" alt="Avatar" />
-                <div class="info"> 
+                <div class="avatar-area">
+                    <img class="avatar" src="@/assets/兔兔.jpg" alt="Avatar" />
+                </div>
+                <div class="info-area"> 
                     <label class="name">❀花海寻梦❀</label>
+                    <!-- <div class="github-icon"></div> -->
                 </div>
             </div>
+
             <div class="introduce-area">
                 <div class="bd-markdown" v-html="$md.render(markdownRaw)"></div>
             </div>
-            
-        </div>
+        </glass-layer>
 
-        <div class="second">
+        <glass-layer class="second">
             <label class="subtitle emoji">꒰ᐢ⸝⸝•༝•⸝⸝ᐢ꒱</label>
             <label class="subtitle">目前页面还在施工中...</label>
             <!-- <h2 class="subtitle">(ˆ꜆ .   ̫  . ).   ̫  . ꜀ˆ)</h2> -->
-        </div>
-
+        </glass-layer>
 
     </section>
     
 </template>
 
 <script>
+    import GlassLayer from '@/components/BaseComponents/GlassLayer.vue';
     import introduce from '@/assets/content/introduce.md?raw';
     import testmd from '@/assets/content/test.md?raw';
 
     export default {
         name: 'PageHome',
         components: {
+            GlassLayer,
         },
         data() {
             return {
@@ -50,6 +55,15 @@
 </script>
 
 <style scoped>
+    .thrid {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
     .banner-container {
         height: 40rem;
         width: 100%;
@@ -105,25 +119,35 @@
         width: 100%;
         border-radius: 1rem;
 
-        padding: clamp(1rem, 2vw, 2rem);
+        padding: clamp(0.5rem, 2vw, 2rem);
         box-sizing: border-box;
         overflow: hidden;
         background-color: var(--card-bg);
 
+        display: grid;
+        grid-template-columns: 1fr;
+        /* gap: clamp(0.5rem, 1vw, 1rem);aaaaaaaaaaaaaaaaaa */
+    }
+
+    .avatar-area {
+        height: 100%;
+        width: 100%;
+        /* max-height: 5rem; */
+
         display: flex;
-        flex-direction: row;
+        justify-content: center;
         align-items: center;
-        gap: clamp(0.5rem, 2vw, 2rem);
     }
 
     .avatar {
+        border: 0.25rem solid var(--text-hightlight);
         height: clamp(5rem, 7vw, 7rem);
         width: clamp(5rem, 7vw, 7rem);
         border-radius: 50%;
         object-fit: cover;
     }
 
-    .info {
+    .info-area {
         height: 100%;
         width: 100%;
 
@@ -132,11 +156,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .name {
-        font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
     }
 
     .introduce-area {
@@ -176,6 +200,21 @@
         font-size: clamp(1rem, 5vw, 5rem);
     }
 
+    .github-icon { 
+        height: 2.5rem;
+        width: 2.5rem;
+        margin-top: auto;
+
+        background-color: var(--text-hightlight);
+
+        -webkit-mask-image: url('@/assets/icons/github.svg');
+        mask-imgage: url('@/assets/icons/github.svg');
+
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+    }
+
     /* 平板屏幕 */
     @media (max-width: 768px) { 
         .banner-container {
@@ -183,6 +222,10 @@
         }
         .top {
             grid-template-columns: 1fr;
+        }
+        .my-info {
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
         }
     }
 

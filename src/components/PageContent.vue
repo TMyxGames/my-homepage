@@ -1,20 +1,24 @@
 <template>
-    <div class="info-container">
+    <glass-layer class="info-container">
         <label class="subtitle">目前本页面用于测试尚未完工的</label>
         <label class="subtitle">自定义Markdown主题</label>
 
         <div class="introduce-area">
                 <div class="bd-markdown" v-html="$md.render(markdownRaw)"></div>
         </div>
-    </div>
+    </glass-layer>
 
 </template>
 
 <script>
+    import GlassLayer from './BaseComponents/GlassLayer.vue';
     import testmd from '@/assets/content/test.md?raw';
 
     export default {
         name: 'PageContent',
+        components: {
+            GlassLayer
+        },
         data() {
             return {
                 markdownRaw: testmd

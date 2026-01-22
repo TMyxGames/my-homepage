@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import GlobalBackground from "@/components/GlobalBackground.vue";
+    import GlobalBackground from "@/components/BaseComponents/GlobalBackground.vue";
 
     export default {
         name: "BaseBackendPage",

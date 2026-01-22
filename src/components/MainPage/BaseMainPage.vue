@@ -14,7 +14,7 @@
 </template>
   
 <script>
-    import GlobalBackground from '@/components/GlobalBackground.vue'
+    import GlobalBackground from '@/components/BaseComponents/GlobalBackground.vue'
     import GlobalHeader from '@/components/Header/GlobalHeader.vue'
     import GlobalFooter from '@/components/GlobalFooter.vue'
     import defaultImg from '@/assets/backgrounds/星月.jpg'

@@ -39,7 +39,7 @@
         name: 'GlobalHeader',
         components: {
             GlobalHeaderOption,
-            ThemeSwitcher
+            ThemeSwitcher,
         },
         props: {
 

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import GlobalBackground from '../GlobalBackground.vue'
+    import GlobalBackground from '../BaseComponents/GlobalBackground.vue'
 
     export default {
         name: 'PageWelcome',
