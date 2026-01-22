@@ -52,7 +52,7 @@
         position: absolute;
         z-index: -1;
 
-        bottom: -0.25rem;
+        bottom: -2.5px;
         left: 0;
         width: 0;
         height: 0.3rem;
@@ -73,7 +73,7 @@
     }
 
     .is-active .option-text::after {
-        bottom: 0.15rem;
+        bottom: 2.5px;
         width: 100%;
         height: 0.55rem;
 
