@@ -2,6 +2,7 @@ import MarkdownIt from 'markdown-it';
 import mark from 'markdown-it-mark';
 import ins from 'markdown-it-ins';
 import markdownItTaskLists from 'markdown-it-task-lists';
+import container from 'markdown-it-container';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github-dark.css';
 
@@ -26,6 +27,17 @@ const md = new MarkdownIt({
 md.use(mark);
 md.use(ins);
 md.use(markdownItTaskLists);
+md.use(container, 'dropcap', { 
+    marker: '↓' ,
+    render: function (tokens, idx) { 
+        if (tokens[idx].nesting === 1) { 
+            return '<div class="bd-dropcap">';
+        } else { 
+            return '</div>\n';
+        }
+    }
+
+});
 
 md.renderer.rules.strong_open = () => '<strong><span>';
 md.renderer.rules.strong_close = () => '</span></strong>';

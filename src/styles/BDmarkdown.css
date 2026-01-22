@@ -157,6 +157,29 @@
     font-size: 1.2rem;
 }
 
+/* 首字下沉段落（自定义样式） */
+.bd-markdown .bd-dropcap {
+    overflow: hidden;
+    margin-bottom: 0rem;
+}
+
+.bd-markdown .bd-dropcap > p {
+    margin-bottom: 0rem; 
+    
+}
+
+.bd-markdown .bd-dropcap > p:first-of-type::first-letter { 
+    font-size: 4rem;
+
+    padding-bottom: 0.1rem;
+    margin-top: 0.1rem;
+    float: left;
+    line-height: 1;
+    clear: both;
+
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--text-hightlight);
+}
+
 /* 粗体 */
 .bd-markdown strong {
     font-weight: 500;
@@ -315,4 +338,30 @@
     content: '';
     position: absolute;
 }
+
+/* 隐藏文本 */
+/* .bd-markdown bd-hide { 
+    width: 100%;
+    height: 100%;
+    padding: 0rem 0.2rem;
+    position: relative;
+}
+
+.bd-markdown bd-hide::before{ 
+    content: '';
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--card-bg);
+    backdrop-filter: 10px;
+    border-radius: 0.5rem;
+    
+}
+
+.bd-markdown bd-hide::before:hover{ 
+    
+} */
 
