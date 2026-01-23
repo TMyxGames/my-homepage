@@ -136,17 +136,17 @@
     @media (max-width: 768px) { 
         .header-container {
             top: 0;
-            border-radius: 0 0 1rem 1rem;
+            border-radius: 0 0 1.25rem 1.25rem;
         }
     }
 
     /* 移动屏幕 */
     @media (max-width: 640px) {
-        .header-container {
+        /* .header-container {
             top: 0;
             border-radius: 0 0 1rem 1rem;
-            /* height: 3.5rem; */
-        }
+            height: 3.5rem;
+        } */
     }
 
 </style>

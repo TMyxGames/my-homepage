@@ -3,21 +3,23 @@
         <label class="subtitle">目前本页面用于测试尚未完工的</label>
         <label class="subtitle">自定义Markdown主题</label>
 
-        <div class="introduce-area">
-                <div class="bd-markdown" v-html="$md.render(markdownRaw)"></div>
-        </div>
+        <card-layer class="introduce-area">
+            <div class="bd-markdown" v-html="$md.render(markdownRaw)"></div>
+        </card-layer>
     </glass-layer>
 
 </template>
 
 <script>
     import GlassLayer from './BaseComponents/GlassLayer.vue';
+    import CardLayer from './BaseComponents/CardLayer.vue';
     import testmd from '@/assets/content/test.md?raw';
 
     export default {
         name: 'PageContent',
         components: {
-            GlassLayer
+            GlassLayer,
+            CardLayer,
         },
         data() {
             return {
@@ -31,14 +33,6 @@
     .info-container {
         width: 100%;
         height: 100%;
-        padding: 2rem;
-        
-        box-sizing: border-box;
-        background-color: var(--glass-bg);
-        color: var(--glass-text);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 25%);
-        backdrop-filter: blur(10px);
-        border-radius: 1rem;
 
         display: flex;
         flex-direction: column;

@@ -7,7 +7,7 @@
     <section class="home-container">
 
         <glass-layer class="top">
-            <div class="my-info">
+            <card-layer class="my-info">
                 <div class="avatar-area">
                     <img class="avatar" src="@/assets/兔兔.jpg" alt="Avatar" />
                 </div>
@@ -15,11 +15,11 @@
                     <label class="name">❀花海寻梦❀</label>
                     <!-- <div class="github-icon"></div> -->
                 </div>
-            </div>
+            </card-layer>
 
-            <div class="introduce-area">
+            <card-layer class="introduce-area">
                 <div class="bd-markdown" v-html="$md.render(markdownRaw)"></div>
-            </div>
+            </card-layer>
         </glass-layer>
 
         <glass-layer class="second">
@@ -34,6 +34,7 @@
 
 <script>
     import GlassLayer from '@/components/BaseComponents/GlassLayer.vue';
+    import CardLayer from './BaseComponents/CardLayer.vue';
     import introduce from '@/assets/content/introduce.md?raw';
     import testmd from '@/assets/content/test.md?raw';
 
@@ -41,6 +42,7 @@
         name: 'PageHome',
         components: {
             GlassLayer,
+            CardLayer,
         },
         data() {
             return {
@@ -89,20 +91,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: clamp(1rem, 2vw, 2rem);
     }
 
     .top {
         height: 100%;
         width: 100%;
-        padding: clamp(1rem, 2vw, 2rem);
-        
-        box-sizing: border-box;
-        background-color: var(--glass-bg);
-        color: var(--glass-text);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 25%);
-        backdrop-filter: blur(10px);
-        border-radius: 1rem;
 
         /* display: flex;
         flex-direction: column;
@@ -117,12 +111,8 @@
     .my-info {
         height: 100%;
         width: 100%;
-        border-radius: 1rem;
 
-        padding: clamp(0.5rem, 2vw, 2rem);
-        box-sizing: border-box;
         overflow: hidden;
-        background-color: var(--card-bg);
 
         display: grid;
         grid-template-columns: 1fr;
@@ -167,24 +157,11 @@
         height: 100%;
         width: 100%;
 
-        padding: clamp(1rem, 2vw, 2rem);
-        box-sizing: border-box;
-        border-radius: 1rem;
-
-        background-color: var(--card-bg);
-        color: var(--card-text)
     }
 
     .second {
         height: 100%;
         width: 100%;
-        padding: clamp(1rem, 2vw, 2rem);
-        
-        box-sizing: border-box;
-        background-color: var(--glass-bg);
-        color: var(--glass-text);
-        backdrop-filter: blur(10px);
-        border-radius: 1rem;
 
         display: flex;
         flex-direction: column;
@@ -208,7 +185,7 @@
         background-color: var(--text-hightlight);
 
         -webkit-mask-image: url('@/assets/icons/github.svg');
-        mask-imgage: url('@/assets/icons/github.svg');
+        mask-image: url('@/assets/icons/github.svg');
 
         -webkit-mask-size: contain;
         mask-size: contain;
@@ -220,8 +197,12 @@
         .banner-container {
             height: 28rem;
         }
+        .home-container {
+            gap: clamp(0.5rem, 1vw, 1rem);;
+        }
         .top {
             grid-template-columns: 1fr;
+            gap:clamp(0.5rem, 1vw, 1rem);
         }
         .my-info {
             grid-template-columns: 1fr 1fr 1fr;

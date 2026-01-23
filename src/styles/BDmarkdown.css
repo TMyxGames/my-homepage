@@ -1,5 +1,5 @@
 .bd-markdown { 
-    line-height: 1.6;
+    line-height: 1.8;
 
     font-family: '晴雪体';
     color: var(--card-text);
@@ -170,7 +170,7 @@
 
 .bd-markdown .bd-dropcap > p:first-of-type::first-letter { 
     font-size: 4rem;
-
+    
     padding-bottom: 0.1rem;
     margin-top: 0.1rem;
     float: left;
@@ -178,6 +178,10 @@
     clear: both;
 
     text-shadow: 0.1rem 0.1rem 0.1rem var(--text-hightlight);
+
+    @media (max-width: 768px) {
+        /* font-size: 3.6rem; */
+    }
 }
 
 /* 粗体 */
@@ -198,33 +202,32 @@
 .bd-markdown u { 
     text-decoration: none;
 
-    position: relative;
-    isolation: isolate;
+    /* position: relative; */
+    /* isolation: isolate; */
 
-    /* text-decoration: none;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     display: inline;
 
-    background-image: 
-        radial-gradient(circle at right, var(--text-hightlight) 0.3rem, transparent 0.3rem),
-        radial-gradient(circle at left, var(--text-hightlight) 0.3rem, transparent 0.3rem),
+    background-image:
+        radial-gradient(circle at 100% 50%, var(--text-hightlight) 0.25rem, transparent 0.27rem),
+        radial-gradient(circle at 0% 50%, var(--text-hightlight) 0.25rem, transparent 0.27rem),
         linear-gradient(var(--text-hightlight), var(--text-hightlight));
 
     background-repeat: no-repeat;
 
     background-size: 
-        0.6rem 0.6rem,
-        0.6rem 0.6rem,
-        calc(100% - 1.4rem) 0.6rem;
-        
-    background-position: 
-        left bottom 0.1rem, 
-        right bottom 0.1rem, 
-        center bottom 0.1rem; */
+        0.27rem 0.55rem,
+        0.27rem 0.55rem,
+        calc(100% - 0.54rem) 0.55rem;
+
+    background-position:
+        left bottom 0.1rem,
+        right bottom 0.1rem,
+        center bottom 0.1rem;
 }
 
-.bd-markdown u::before { 
+/* .bd-markdown u::before { 
     box-sizing: border-box;
     content: '';
     position: absolute;
@@ -239,7 +242,7 @@
     border-radius: 1rem;
     background-color: var(--text-hightlight);
     box-decoration-break: clone;
-}
+} */
 
 /* 删除线 */
 .bd-markdown s { 
