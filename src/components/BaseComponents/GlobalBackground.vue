@@ -7,8 +7,8 @@
 </template>
 
 <script>
-    import time1 from '@/assets/backgrounds/日出.png'
-    import time2 from '@/assets/backgrounds/早上.png'
+    import time1 from '@/assets/backgrounds/日出2.png'
+    import time2 from '@/assets/backgrounds/早上2.png'
     import time3 from '@/assets/backgrounds/下午.png'
     import time4 from '@/assets/backgrounds/黄昏.png'
     import time5 from '@/assets/backgrounds/晚上.png'
@@ -47,7 +47,7 @@
                     return this.currentTimeImg;
                 }
                 // 否则使用特定图片或者默认背景
-                return this.imgSrc || require('@/assets/backgrounds/星月.jpg');
+                return this.imgSrc || starmoon;
             }
         },
         mounted() {

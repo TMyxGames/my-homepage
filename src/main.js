@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -10,6 +11,7 @@ import './styles/theme.css'
 import './styles/BDmarkdown.css'
 import md from './utils/markdown'
 
+const pinia = createPinia()
 const app = createApp(App)
 
 app.config.globalProperties.$http = axios
@@ -17,7 +19,8 @@ axios.defaults.baseURL = 'http://localhost:9090'
 
 app.config.globalProperties.$md = md
 
-app.use(ElementPlus)
+app.use(pinia)
 app.use(router)
+app.use(ElementPlus)
 
 app.mount('#app')

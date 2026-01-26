@@ -1,0 +1,82 @@
+<template>
+    <div class="manage-article">
+        <span>文章管理</span>
+        <el-upload
+            class="upload"
+            action="#"
+            :auto-upload="false"
+            :show-file-list="false"
+            :on-change="UploadArticle"
+        >
+            <el-button type="primary" size="small">
+                上传文章
+            </el-button>
+            
+        </el-upload>
+        <div class="item-area">
+            <article-item
+                v-for="item in articleStore.articles"
+                :key="item.id"
+                :articleInfo="item"
+                @delete="handleDelete"
+            >
+            </article-item>
+        </div>
+    </div>
+</template>
+
+<script>
+    import { useArticleStore } from '@/stores/article';
+    import ArticleItem from './ArticleItem.vue';
+
+    export default {
+        name: "ManageArticle",
+        components: {
+            ArticleItem,
+        },
+        setup() {
+            const articleStore = useArticleStore();
+            return { articleStore };
+        },
+        data() {
+            return {
+
+            }
+        },
+        mounted() {
+            this.articleStore.getArticles();
+        },
+        methods: {
+            async UploadArticle(file) {
+                if (file.status !== 'ready') return;
+                if (!file || !file.raw) return;
+
+                let formData = new FormData();
+                formData.append('file', file.raw);
+
+                try {
+                    const res = await this.$http.post('/article/upload', formData);
+                    if (res.status === 200) {
+                        this.$message.success('上传成功');
+                    }
+                    
+                } catch (error) {
+                    this.$message.error('上传失败');
+                }
+            },
+            handleDelete(id) {
+                this.$confirm('确定要删除该文章吗?', '提示', { type: 'warning' })
+                    .then(() => {
+                        this.articleStore.removeArticle(id);
+                    });
+            }
+        },
+    }
+</script>
+
+<style>
+    .item-area {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
