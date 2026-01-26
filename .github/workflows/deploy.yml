@@ -40,8 +40,8 @@ jobs:
           # Rsync配置
           SOURCE: "dist/"
           TARGET: "${{ secrets.TARGET }}/frontend"
-          ARGS: "-avzr --delete"
-          EXCLUDE: "/node_modules/,/.git/"  # 排除更多无用目录
+          ARGS: "-avzr --delete --exclude=.user.ini --exclude=.htaccess --exclude=.well-known"
+          EXCLUDE: "/node_modules/,/.git/,.user.ini,.htaccess,.well-known"
 
           # 部署后脚本（关键：修复权限）
           SCRIPT_AFTER: |
