@@ -13,9 +13,13 @@ import md from './utils/markdown'
 
 const pinia = createPinia()
 const app = createApp(App)
+const apiClient = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  timeout: 5000,
+})
 
 app.config.globalProperties.$http = axios
-axios.defaults.baseURL = 'http://localhost:9090'
+axios.defaults.baseURL = apiClient
 
 app.config.globalProperties.$md = md
 
