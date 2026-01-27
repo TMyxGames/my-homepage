@@ -41,15 +41,9 @@
         },
         methods: {
             async loadMarkdown(url) {
+                if (!url) return;
                 try {
-                    console.log("正在加载文章详情：", url);
-
-                    if (!url) return;
-                    const requestUrl = url.startsWith('http')
-                                    ? url 
-                                    : `${this.$http.defaults.baseURL}${url}`;
-                    console.log("请求的 url:", requestUrl);
-                    const res = await this.$http.get(requestUrl);
+                    const res = await this.$http.get(url);
                     this.markdownRaw = res.data;
                 } catch (error) {
                     console.error("文章详情加载失败：", error);
