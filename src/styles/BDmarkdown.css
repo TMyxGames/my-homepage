@@ -1,6 +1,11 @@
+@font-face { 
+    font-family: 'Jetbrains Mono', monospace;
+    src: url('./assets/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-display: swap;
+}
+
 .bd-markdown { 
     line-height: 1.8;
-
     font-family: '晴雪体';
     color: var(--card-text);
 }
@@ -300,8 +305,7 @@
 
 /* 代码 */
 .bd-markdown pre { 
-    font-family: 'JetBrains Mono', '晴雪体', monospace;
-    src: url('./assets/fonts/JetBrainsMono-Regular.woff2') format('opentype');
+    font-family: 'JetBrains Mono', '晴雪体', monospace !important;
     overflow-x: auto;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -319,7 +323,7 @@
 }
 
 .bd-markdown :not(pre) > code { 
-    font-family: inherit;
+    font-family: 'Jetbrains Mono', '晴雪体', monospace !important;
 
     padding: 0rem 0.2rem;
     border-radius: 0.5rem;

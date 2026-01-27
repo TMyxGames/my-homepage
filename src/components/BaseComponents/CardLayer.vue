@@ -34,8 +34,8 @@
 
     /* 平板屏幕 */
     @media (max-width: 768px) { 
-        .card-layer {
-            /* padding:clamp(0.5rem, 1vw, 1rem); */
+        .thin{
+            padding:clamp(0.5rem, 1vw, 1rem);
         }
     }
 

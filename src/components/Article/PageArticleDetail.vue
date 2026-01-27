@@ -1,6 +1,6 @@
 <template>
     <glass-layer class="article-detail-container">
-        <card-layer class="content-area">
+        <card-layer class="content-area thin">
             <div class="bd-markdown" v-html="$md.render(markdownRaw)"></div>
         </card-layer>
     </glass-layer>

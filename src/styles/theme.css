@@ -73,3 +73,9 @@ html.dark {
     background-color: var(--text-hightlight);
     border-radius: 1rem;
 }
+
+@media(max-width: 768px) {
+    .bd-h1{
+        font-size: 1.4rem;
+    }
+}

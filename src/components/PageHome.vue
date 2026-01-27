@@ -36,7 +36,6 @@
     import GlassLayer from '@/components/BaseComponents/GlassLayer.vue';
     import CardLayer from './BaseComponents/CardLayer.vue';
     import introduce from '@/assets/content/introduce.md?raw';
-    import testmd from '@/assets/content/test.md?raw';
 
     export default {
         name: 'PageHome',
@@ -116,7 +115,6 @@
 
         display: grid;
         grid-template-columns: 1fr;
-        /* gap: clamp(0.5rem, 1vw, 1rem);aaaaaaaaaaaaaaaaaa */
     }
 
     .avatar-area {
