@@ -73,7 +73,7 @@
                         title: newTitle 
                     });
 
-                    const article = this.articleStore.articles.find(item => item.id === id);
+                    const article = this.articleStore.articles.find(a => a.id === id);
                     if (article) {
                         article.title = newTitle;
                     }
