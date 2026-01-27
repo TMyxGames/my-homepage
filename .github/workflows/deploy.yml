@@ -35,7 +35,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.SERVER_HOST }}  # 确保在GitHub Secrets中配置此变量
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          REMOTE_PORT: "22"  # 必须用字符串格式
+          REMOTE_PORT: "6415"  # 必须用字符串格式
 
           # Rsync配置
           SOURCE: "dist/"
