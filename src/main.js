@@ -5,6 +5,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import axios from 'axios'
 import router from './router/GlobalJump'
+import apiClient from './utils/request'
 
 import './styles/reset.css'
 import './styles/theme.css'
@@ -13,13 +14,8 @@ import md from './utils/markdown'
 
 const pinia = createPinia()
 const app = createApp(App)
-const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_APP_BASE_URL,
-  timeout: 5000,
-})
 
-app.config.globalProperties.$http = axios
-axios.defaults.baseURL = apiClient
+app.config.globalProperties.$http = apiClient
 
 app.config.globalProperties.$md = md
 

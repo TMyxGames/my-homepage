@@ -20,6 +20,7 @@
             >
                 退出登录
             </el-button>
+            <ThemeSwitcher/>
         </div>
     </card-layer>
 </template>
@@ -27,11 +28,13 @@
 <script>
     import { useRouter } from 'vue-router';
     import { useUserStore } from '@/stores/user';
+    import ThemeSwitcher from '../ThemeSwitcher.vue';
     import CardLayer from '../BaseComponents/CardLayer.vue';
 
     export default {
         name: "BackendSidebar",
         components: {
+            ThemeSwitcher,
             CardLayer,
         },
         setup() {
@@ -106,6 +109,7 @@
 
         display: flex;
         justify-content: center;
+        gap: 2.5rem;
     }
 
     .logout-btn { 

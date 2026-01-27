@@ -18,6 +18,7 @@
                 v-for="item in articleStore.articles"
                 :key="item.id"
                 :articleInfo="item"
+                @update-title="handleUpdateTitle"
                 @delete="handleDelete"
             >
             </article-item>
@@ -40,7 +41,7 @@
         },
         data() {
             return {
-
+                
             }
         },
         mounted() {
@@ -58,10 +59,28 @@
                     const res = await this.$http.post('/article/upload', formData);
                     if (res.status === 200) {
                         this.$message.success('上传成功');
+                        this.articleStore.getArticles();
                     }
                     
                 } catch (error) {
                     this.$message.error('上传失败');
+                }
+            },
+            async handleUpdateTitle({ id, newTitle }) {
+                try {
+                    await this.$http.put('/article/updateTitle', { 
+                        id: id, 
+                        title: newTitle 
+                    });
+
+                    const article = this.articleStore.articles.find(item => item.id === id);
+                    if (article) {
+                        article.title = newTitle;
+                    }
+
+                    this.$message.success('标题修改成功');
+                } catch (error) {
+                    this.$message.error('标题修改失败');
                 }
             },
             handleDelete(id) {

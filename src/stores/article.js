@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import axios from 'axios';
+import apiClient from '@/utils/request';
 
 export const useArticleStore = defineStore('article', {
   state: () => ({
@@ -11,7 +11,7 @@ export const useArticleStore = defineStore('article', {
     async getArticles() {
         this.loading = true;
         try {
-            const res = await axios.get('/article/all');
+            const res = await apiClient.get('/article/all');
             this.articles = res.data;
         } catch (error) {
             console.error('获取文章列表失败：', error);
@@ -21,7 +21,7 @@ export const useArticleStore = defineStore('article', {
     },
     async getArticleById(id) {
         try {
-            const res = await axios.get(`/article/${id}`);
+            const res = await apiClient.get(`/article/${id}`);
             return res.data;
         } catch (error) {
             console.error('文章获取失败：', error);
@@ -32,7 +32,7 @@ export const useArticleStore = defineStore('article', {
     // 删除文章
     async removeArticle(id) {
         try {
-            const res = await axios.delete(`/article/delete/${id}`);
+            const res = await apiClient.delete(`/article/delete/${id}`);
             if(res.status === 200) {
                 this.articles = this.articles.filter(article => article.id !== id);
                 this.$message.success('删除文章成功');
