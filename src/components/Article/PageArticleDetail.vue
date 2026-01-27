@@ -33,6 +33,7 @@
 
             if (data) {
                 this.currentArticle = data;
+                console.log("后端返回的原始 contentUrl:", this.currentArticle.contentUrl);
                 await this.loadMarkdown(this.currentArticle.contentUrl);
             } else {
                 this.$message.error("文章不存在或已被删除");
