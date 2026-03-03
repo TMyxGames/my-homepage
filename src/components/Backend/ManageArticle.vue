@@ -13,9 +13,12 @@
             </el-button>
             
         </el-upload>
+        <div class="form-row">
+            <el-button type="primary" @click="goToCreate">添加文章</el-button>
+        </div>
         <div class="item-area">
             <article-item
-                v-for="item in articleStore.articles"
+                v-for="item in articleStore.articleList"
                 :key="item.id"
                 :articleInfo="item"
                 @update-title="handleUpdateTitle"
@@ -45,9 +48,21 @@
             }
         },
         mounted() {
-            this.articleStore.getArticles();
+            this.articleStore.getAllArticles();
         },
         methods: {
+            // 创建新文章
+            async goToCreate() {
+                try {
+                    const res = await this.$http.get('/article/preGenerateId');
+
+                    const newId = res.data;
+                    this.$router.push(`/ManageArticle/${newId}`);
+                } catch (error) {
+                    console.log('创建文章失败：', error);
+                }
+            },
+
             async UploadArticle(file) {
                 if (file.status !== 'ready') return;
                 if (!file || !file.raw) return;
@@ -57,11 +72,8 @@
 
                 try {
                     const res = await this.$http.post('/article/upload', formData);
-                    if (res.status === 200) {
-                        this.$message.success('上传成功');
-                        this.articleStore.getArticles();
-                    }
-                    
+                    this.$message.success('上传成功');
+                    this.articleStore.getAllArticles();
                 } catch (error) {
                     this.$message.error('上传失败');
                 }
@@ -73,7 +85,7 @@
                         title: newTitle 
                     });
 
-                    const article = this.articleStore.articles.find(a => a.id === id);
+                    const article = this.articleStore.articleList.find(a => a.id === id);
                     if (article) {
                         article.title = newTitle;
                     }
@@ -83,12 +95,6 @@
                     this.$message.error('标题修改失败');
                 }
             },
-            handleDelete(id) {
-                this.$confirm('确定要删除该文章吗?', '提示', { type: 'warning' })
-                    .then(() => {
-                        this.articleStore.removeArticle(id);
-                    });
-            }
         },
     }
 </script>

@@ -4,17 +4,29 @@
         <card-layer class="login-container">
             <input-box1
                 moduleWidth="15rem"
-                v-model="password"
+                v-model="captcha"
             >
             </input-box1>
-            <el-button
-                class="login-button"
-                type="primary"
-                size="large"
-                @click="handleLogin"
-            >
-                登录
-            </el-button>
+            <div class="btn-area">
+                <el-button
+                    class="login-button"
+                    type="primary"
+                    size="large"
+                    @click="sendCaptcha"
+                    :disabled="isCodeSending || countdown > 0"
+                    :loading="isCodeSending"
+                >
+                    {{ countdown > 0 ? `${countdown}s后重新发送` : '获取验证码' }}
+                </el-button>
+                <el-button
+                    class="login-button"
+                    type="primary"
+                    size="large"
+                    @click="handleLogin"
+                >
+                    登录
+                </el-button>
+            </div>
         </card-layer>
     </mid-overlay>
 </template>
@@ -42,23 +54,48 @@
         },
         data() {
             return {
-                password: '',
-                realPassword: 'qaz1224535544',
+                captcha: '',
+                isCodeSending: false,
+                countdown: 0,
             }
         },
         methods: {
-            handleLogin() {
-                if (this.password === '') {
-                    this.$message.error('请输入密码');
+            async sendCaptcha() {
+                this.isCodeSending = true;
+
+                try {
+                    const res = await this.$http.post('/auth/sendCaptcha');
+                    this.$message.success('验证码发送成功');
+
+                    this.countdown = 60;
+                    const timer = setInterval(() => {
+                        this.countdown--;
+                        if (this.countdown <= 0) {
+                            clearInterval(timer);
+                        }
+                    }, 1000);
+                } catch (error) {
+                    this.$message.error('验证码发送失败');
+                } finally {
+                    this.isCodeSending = false;
+                }
+            },
+            async handleLogin() {
+                if (!this.captcha) {
+                    this.$message.error('请输入验证码');
+                    return;
                 }
 
-                if (this.password !== this.realPassword) {
-                    this.$message.error('密码错误');
-                    return;
-                } else {
+                try {
+                    const res = await this.$http.post('/auth/login', { captcha: this.captcha });
+
                     this.userStore.login();
                     this.$router.push('/backend');
                     this.$message.success('登录成功');
+                } catch (error) {
+                    console.error(error);
+                    this.$message.error(error);
+                    return;
                 }
             }
         }
@@ -84,7 +121,6 @@
     .login-button {
         font-size: clamp(1rem, 1.25vw, 1.25rem);
 
-        /* border: 2px solid var(--text-hightlight); */
         border-radius: 0.5rem;
     }
 </style>

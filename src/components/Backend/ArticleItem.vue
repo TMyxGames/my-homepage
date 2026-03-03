@@ -15,14 +15,30 @@
             ></el-input>
 
             <span class="file-name">
-                {{ articleInfo.fileName }}
+                {{ formatTime(articleInfo.uploadTime) }}
             </span>
         </div>
         <el-button
-            class="delete-btn"
+            class="btn"
+            v-if="articleInfo.status === 0"
+            type="success"
+            size="large"
+            @click="handlePublish"
+        >发布文章</el-button>
+        <el-button
+            class="btn"
+            type="primary"
+            size="large"
+            @click="handleEdit"
+        >
+            编辑文章
+        </el-button>
+        <el-button
+            class="btn"
             type="danger"
             size="large"
-            @click="$emit('delete', articleInfo.id)"
+            plain
+            @click="handleDelete"
         >
             删除文章
         </el-button>
@@ -30,6 +46,8 @@
 </template>
 
 <script>
+    import { useArticleStore } from "@/stores/article";
+
     export default {
         name: "ArticleItem",
         props: {
@@ -38,6 +56,10 @@
                 required: true,
             }
         },
+        setup() {
+            const articleStore = useArticleStore();
+            return { articleStore };
+        },
         data() {
             return {
                 isEditing: false,
@@ -45,6 +67,27 @@
             };
         },
         methods: {
+            // 格式化日期
+            formatTime(time) {
+                if (!time) return '';
+                return time.replace('T', ' ').substring(0, 16);
+            },
+
+            // 发布文章（将文章状态改为1）
+            async handlePublish() {
+                try {
+                    const res = await this.$http.post('/article/save', {
+                        id: this.articleInfo.id,
+                        title: this.articleInfo.title,
+                        status: 1,
+                    });
+                    this.$message.success('文章已发布');
+                    this.articleStore.getAllArticles();
+                } catch (error) {
+                    this.$message.error('发布失败');
+                }
+            },
+
             startEdit() {
                 this.tempTitle = this.articleInfo.title;
                 this.isEditing = true;
@@ -63,6 +106,22 @@
                     newTitle: this.tempTitle
                 });
                 this.isEditing = false;
+            },
+
+            // 编辑文章
+            handleEdit() {
+                this.$router.push({
+                    name: 'EditArticle',
+                    params: { id: this.articleInfo.id },
+                    query: { mode: 'edit' }
+                });
+            },
+
+            handleDelete() {
+                this.$confirm('确定要删除该文章吗?', '提示', { type: 'warning' })
+                    .then(() => {
+                        this.articleStore.removeArticle(this.articleInfo.id);
+                    });
             }
         }
     };
@@ -95,7 +154,7 @@
         transform: scale(1.025);
     }
 
-    .delete-btn {
+    .btn {
         margin-left: auto;
     }
 </style>

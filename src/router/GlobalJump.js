@@ -15,6 +15,7 @@ import ManageArticle from '@/components/Backend/ManageArticle.vue'
 import PageArticle from '@/components/Article/PageArticle.vue'
 
 import { useUserStore } from '@/stores/user'
+import ManageArticleContainer from '@/components/Backend/ManageArticleContainer.vue'
 
 const routes = [
   { path: '/:catchAll(.*)', redirect: '/PageWelcome' },
@@ -30,7 +31,8 @@ const routes = [
 
       { path: '/PageArticle', component: PageArticle },
       { path: '/PageArticle/:id', name: 'PageArticleDetail',
-        component: () => import('@/components/Article/PageArticleDetail.vue')},
+        component: () => import('@/components/Article/PageArticleDetail.vue')
+      },
     ]
   },
 
@@ -38,7 +40,16 @@ const routes = [
   { path: '/backend', component: BaseBackendPage, redirect: "/ManageArticle",
     meta: { requiresAuth: true },
     children: [
-      { path: '/ManageArticle', component: ManageArticle },
+      { path: '/article', component: ManageArticleContainer , redirect: "/ManageArticle",
+        children: [
+          { path: '/ManageArticle', component: ManageArticle },
+          { path: '/ManageArticle/:id', name: 'EditArticle',
+            component: () => import('@/components/Backend/EditArticle.vue')
+          },
+        ]
+      
+      },
+      
     ]
   },
 ]

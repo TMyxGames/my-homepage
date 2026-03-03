@@ -1,7 +1,7 @@
 <template>
     <glass-layer class="article-container">
         <page-article-item
-            v-for="item in articleStore.articles"
+            v-for="item in articleStore.articleList"
             :key="item.id"
             :articleInfo="item"
         >
@@ -34,7 +34,7 @@
             }
         },
         mounted() {
-            this.articleStore.getArticles();
+            this.articleStore.getPublished();
         },
     }
 </script>

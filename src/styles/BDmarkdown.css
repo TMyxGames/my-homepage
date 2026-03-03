@@ -346,6 +346,44 @@
     position: absolute;
 }
 
+/* 图片容器 */
+.bd-markdown .bd-md-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+/* 图片主体 */
+.bd-markdown .bd-md-figure img {
+    max-width: 60%;
+    height: auto;
+
+    border-radius: 1rem;
+    transition: all 0.25s ease;
+
+    @media (max-width: 768px) {
+        max-width: 96%;
+    }
+}
+
+/* 图片说明文字 */
+.bd-markdown .bd-md-caption {
+    margin-top: 0.5rem;
+
+    font-size: 1.2rem;
+    color: var(--card-text);
+    opacity: 0.8;
+    /* font-style: italic; */
+    position: relative;
+    padding: 0 1rem;
+}
+
+.bd-markdown .bd-md-figure img:hover { 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 25%);
+    transform: scale(1.025);
+}
+
 /* 隐藏文本 */
 /* .bd-markdown bd-hide { 
     width: 100%;
