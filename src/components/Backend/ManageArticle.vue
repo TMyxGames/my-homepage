@@ -1,18 +1,5 @@
 <template>
     <div class="manage-article">
-        <span>文章管理</span>
-        <el-upload
-            class="upload"
-            action="#"
-            :auto-upload="false"
-            :show-file-list="false"
-            :on-change="UploadArticle"
-        >
-            <el-button type="primary" size="small">
-                上传文章
-            </el-button>
-            
-        </el-upload>
         <div class="form-row">
             <el-button type="primary" @click="goToCreate">添加文章</el-button>
         </div>
@@ -60,22 +47,6 @@
                     this.$router.push(`/ManageArticle/${newId}`);
                 } catch (error) {
                     console.log('创建文章失败：', error);
-                }
-            },
-
-            async UploadArticle(file) {
-                if (file.status !== 'ready') return;
-                if (!file || !file.raw) return;
-
-                let formData = new FormData();
-                formData.append('file', file.raw);
-
-                try {
-                    const res = await this.$http.post('/article/upload', formData);
-                    this.$message.success('上传成功');
-                    this.articleStore.getAllArticles();
-                } catch (error) {
-                    this.$message.error('上传失败');
                 }
             },
             async handleUpdateTitle({ id, newTitle }) {

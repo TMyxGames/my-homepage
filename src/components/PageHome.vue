@@ -22,6 +22,12 @@
             </card-layer>
         </glass-layer>
 
+        <!-- <glass-layer class="second">
+            <card-layer>
+                <calendar/>
+            </card-layer>
+        </glass-layer> -->
+
         <glass-layer class="second">
             <label class="subtitle emoji">꒰ᐢ⸝⸝•༝•⸝⸝ᐢ꒱</label>
             <label class="subtitle">目前页面还在施工中...</label>
@@ -32,26 +38,15 @@
     
 </template>
 
-<script>
+<script setup>
+    import { onMounted } from 'vue';
     import GlassLayer from '@/components/BaseComponents/GlassLayer.vue';
     import CardLayer from './BaseComponents/CardLayer.vue';
+    import Calendar from './Common/Calendar.vue';
     import introduce from '@/assets/content/introduce.md?raw';
 
-    export default {
-        name: 'PageHome',
-        components: {
-            GlassLayer,
-            CardLayer,
-        },
-        data() {
-            return {
-                markdownRaw: introduce,
-            }
-        },
-        methods: {
+    const markdownRaw = introduce;
 
-        }
-    }
 
 </script>
 

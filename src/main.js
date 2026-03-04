@@ -9,6 +9,7 @@ import router from './router/GlobalJump'
 import './styles/reset.css'
 import './styles/theme.css'
 import './styles/BDmarkdown.css'
+import './styles/BDmarkdownTheme.css'
 
 import request from './utils/request'
 import md from './utils/markdown'

@@ -6,7 +6,9 @@
     <div class="main-page-container">
         <div class="main-page-view">
 
-            <router-view></router-view>
+            <transition name="fade" mode="out-int">
+                <router-view></router-view>
+            </transition>
 
         </div>
     </div>
@@ -56,6 +58,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.25s ease-in-out;
+    }
+    .fade-enter-from, .fade-leave-to {
+        opacity: 0;
     }
   
 

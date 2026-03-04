@@ -18,6 +18,7 @@
                 v-model="articleForm.content"
                 @onUploadImg="onUploadImg"
                 :toolbars-exclude="['github']"
+                previewTheme="bd"
                 placeholder="请输入内容..."
                 class="editor-body"
             />

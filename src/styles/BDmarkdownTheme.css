@@ -4,14 +4,14 @@
     font-display: swap;
 }
 
-.bd-markdown { 
+.bd-theme { 
     line-height: 1.8;
     font-family: '晴雪体';
     color: var(--card-text);
 }
 
 /* 一级标题 */
-.bd-markdown h1 {
+.bd-theme h1 {
     font-size: 2.2rem;
     position: relative;
 
@@ -20,7 +20,7 @@
     color: var(--text-hightlight);
 }
 
-.bd-markdown h1::after {
+.bd-theme h1::after {
     content: '';
     position: absolute;
     
@@ -35,7 +35,7 @@
 }
 
 /* 二级标题 */
-.bd-markdown h2 {
+.bd-theme h2 {
     font-size: 2rem;
     position: relative;
 
@@ -44,7 +44,7 @@
     color: var(--text-hightlight);
 }
 
-.bd-markdown h2::after {
+.bd-theme h2::after {
     content: '';
     position: absolute;
     
@@ -59,7 +59,7 @@
 }
 
 /* 三级标题 */
-.bd-markdown h3 {
+.bd-theme h3 {
     font-size: 1.8rem;
     position: relative;
 
@@ -68,7 +68,7 @@
     color: var(--text-hightlight);
 }
 
-.bd-markdown h3::after {
+.bd-theme h3::after {
     content: '';
     position: absolute;
     
@@ -83,7 +83,7 @@
 }
 
 /* 四级标题 */
-.bd-markdown h4 {
+.bd-theme h4 {
     font-size: 1.6rem;
     position: relative;
 
@@ -93,7 +93,7 @@
     color: var(--text-hightlight);
 }
 
-.bd-markdown h4::after {
+.bd-theme h4::after {
     content: '';
     position: absolute;
     
@@ -108,7 +108,7 @@
 }
 
 /* 五级标题 */
-.bd-markdown h5 {
+.bd-theme h5 {
     font-size: 1.4rem;
     position: relative;
 
@@ -118,7 +118,7 @@
     color: var(--text-hightlight);
 }
 
-.bd-markdown h5::after {
+.bd-theme h5::after {
     content: '';
     position: absolute;
     
@@ -133,7 +133,7 @@
 }
 
 /* 六级标题 */
-.bd-markdown h6 {
+.bd-theme h6 {
     font-size: 1.2rem;
     position: relative;
 
@@ -143,7 +143,7 @@
     color: var(--text-hightlight);
 }
 
-.bd-markdown h6::after {
+.bd-theme h6::after {
     content: '';
     position: absolute;
     
@@ -158,22 +158,22 @@
 }
 
 /* 段落 */
-.bd-markdown p {
+.bd-theme p {
     font-size: 1.2rem;
 }
 
 /* 首字下沉段落（自定义样式） */
-.bd-markdown .bd-dropcap {
+.bd-theme .bd-dropcap {
     overflow: hidden;
     margin-bottom: 0rem;
 }
 
-.bd-markdown .bd-dropcap > p {
+.bd-theme .bd-dropcap > p {
     margin-bottom: 0rem; 
     
 }
 
-.bd-markdown .bd-dropcap > p:first-of-type::first-letter { 
+.bd-theme .bd-dropcap > p:first-of-type::first-letter { 
     font-size: 4rem;
     
     padding-bottom: 0.1rem;
@@ -190,7 +190,7 @@
 }
 
 /* 粗体 */
-.bd-markdown strong {
+.bd-theme strong {
     font-weight: 500;
     color: var(--text-hightlight);
     text-shadow: 0.05rem 0.05rem 0.05rem var(--card-text);
@@ -199,12 +199,12 @@
 }
 
 /* 斜体 */
-.bd-markdown em { 
+.bd-theme em { 
     font-style: italic;
 }
 
 /* 下划线 */
-.bd-markdown u { 
+.bd-theme u { 
     text-decoration: none;
 
     /* position: relative; */
@@ -232,7 +232,7 @@
         center bottom 0.1rem;
 }
 
-/* .bd-markdown u::before { 
+/* .bd-theme u::before { 
     box-sizing: border-box;
     content: '';
     position: absolute;
@@ -250,13 +250,13 @@
 } */
 
 /* 删除线 */
-.bd-markdown s { 
+.bd-theme s { 
     text-decoration: none;
 
     position: relative;
 }
 
-.bd-markdown s::after { 
+.bd-theme s::after { 
     content: '';
     position: absolute;
     
@@ -274,13 +274,13 @@
 }
 
 /* 链接 */
-.bd-markdown a { 
+.bd-theme a { 
     text-decoration: none;
     color: var(--text-link);
     position: relative;
 }
 
-.bd-markdown a::after { 
+.bd-theme a::after { 
     content: '';
     position: absolute;
     
@@ -295,7 +295,7 @@
 }
 
 /* 高亮 */
-.bd-markdown mark { 
+.bd-theme mark { 
     padding: 0rem 0.2rem;
     border-radius: 0.5rem;
 
@@ -304,7 +304,7 @@
 }
 
 /* 代码 */
-.bd-markdown pre { 
+.bd-theme pre { 
     font-family: 'JetBrains Mono', '晴雪体', monospace !important;
     overflow-x: auto;
     padding: 1rem;
@@ -313,7 +313,7 @@
     background-color: var(--code-bg);
 }
 
-.bd-markdown pre code { 
+.bd-theme pre code { 
     font-family: inherit;
 
     padding: 0;
@@ -322,7 +322,7 @@
     background-color: transparent;
 }
 
-.bd-markdown :not(pre) > code { 
+.bd-theme :not(pre) > code { 
     font-family: 'Jetbrains Mono', '晴雪体', monospace !important;
 
     padding: 0rem 0.2rem;
@@ -333,7 +333,7 @@
 }
 
 /* 引用 */
-.bd-markdown blockquote { 
+.bd-theme blockquote { 
     font-style: italic;
 
     position: relative;
@@ -341,13 +341,13 @@
     /* background-color: var(--code-bg); */
 }
 
-.bd-markdown blockquote::before { 
+.bd-theme blockquote::before { 
     content: '';
     position: absolute;
 }
 
 /* 图片容器 */
-.bd-markdown .bd-md-figure {
+.bd-theme .bd-md-figure {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -355,11 +355,9 @@
 }
 
 /* 图片主体 */
-.bd-markdown .bd-md-figure img {
+.bd-theme .bd-md-figure img {
     max-width: 60%;
-    width: clamp(80%, 80%, 60%);
-    max-height: 50vh;
-    object-fit: contain;
+    height: auto;
 
     border-radius: 1rem;
     transition: all 0.25s ease;
@@ -370,7 +368,7 @@
 }
 
 /* 图片说明文字 */
-.bd-markdown .bd-md-caption {
+.bd-theme .bd-md-caption {
     margin-top: 0.5rem;
 
     font-size: 1.2rem;
@@ -381,20 +379,20 @@
     padding: 0 1rem;
 }
 
-.bd-markdown .bd-md-figure img:hover { 
+.bd-theme .bd-md-figure img:hover { 
     box-shadow: 0 0 10px rgba(0, 0, 0, 25%);
     transform: scale(1.025);
 }
 
 /* 隐藏文本 */
-/* .bd-markdown bd-hide { 
+/* .bd-theme bd-hide { 
     width: 100%;
     height: 100%;
     padding: 0rem 0.2rem;
     position: relative;
 }
 
-.bd-markdown bd-hide::before{ 
+.bd-theme bd-hide::before{ 
     content: '';
     position: absolute;
 
@@ -408,7 +406,7 @@
     
 }
 
-.bd-markdown bd-hide::before:hover{ 
+.bd-theme bd-hide::before:hover{ 
     
 } */
 
