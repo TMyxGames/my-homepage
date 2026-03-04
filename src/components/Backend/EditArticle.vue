@@ -85,7 +85,8 @@
                     form.append('articleId', articleForm.value.id); 
 
                     request.post('/article/uploadImage', form, {
-                        headers: { 'Content-Type': 'multipart/form-data' }
+                        headers: { 'Content-Type': 'multipart/form-data' },
+                        timeout: 30000,
                     }).then((singleRes) => {
                         rev(singleRes);
                     }).catch((err) => rej(err));
