@@ -55,11 +55,6 @@ md.renderer.rules.image = function (tokens, idx, options, env, self) {
     const url = token.attrs[srcIndex][1];
     const caption = md.utils.escapeHtml(token.content); // 提取 alt 文字作为说明
 
-    // 如果没有 alt 文字，就按普通图片渲染
-    if (!caption) {
-        return defaultRender(tokens, idx, options, env, self);
-    }
-
     // 返回带有 figure 和 figcaption 的结构
     return `
         <figure class="bd-md-figure">

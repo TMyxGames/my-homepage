@@ -206,19 +206,17 @@
 /* 下划线 */
 .bd-markdown u { 
     text-decoration: none;
-
-    /* position: relative; */
-    /* isolation: isolate; */
+    position: relative;
+    display: inline;
+    isolation: isolate;
 
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    display: inline;
 
     background-image:
         radial-gradient(circle at 100% 50%, var(--text-hightlight) 0.25rem, transparent 0.27rem),
         radial-gradient(circle at 0% 50%, var(--text-hightlight) 0.25rem, transparent 0.27rem),
         linear-gradient(var(--text-hightlight), var(--text-hightlight));
-
     background-repeat: no-repeat;
 
     background-size: 
@@ -230,6 +228,7 @@
         left bottom 0.1rem,
         right bottom 0.1rem,
         center bottom 0.1rem;
+
 }
 
 /* .bd-markdown u::before { 
@@ -357,7 +356,7 @@
 /* 图片主体 */
 .bd-markdown .bd-md-figure img {
     max-width: 60%;
-    width: clamp(80%, 80%, 60%);
+    /* width: clamp(80%, 80%, 60%); */
     max-height: 50vh;
     object-fit: contain;
 

@@ -40,9 +40,8 @@
 
     .backend-container {
         width: 100%;
-        height: calc(100vh - clamp(2rem, 4vw, 4rem));
+        max-height: calc(100vh - clamp(2rem, 4vw, 4rem));
         max-width: 120rem;
-        max-height: 80rem;
         min-height: 60rem;
 
         display: grid;
@@ -51,8 +50,10 @@
     }
 
     .main {
-        width: 100%;
-        height: 100%;
+        flex: 1;
+        overflow-y: auto;
+
+        min-height: 0;
     }
 
     /* 平板屏幕 */

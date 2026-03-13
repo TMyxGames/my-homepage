@@ -88,8 +88,7 @@
 
                 try {
                     const res = await this.$http.post('/auth/login', { captcha: this.captcha });
-
-                    this.userStore.login();
+                    this.userStore.login(res.data);
                     this.$router.push('/backend');
                     this.$message.success('登录成功');
                 } catch (error) {

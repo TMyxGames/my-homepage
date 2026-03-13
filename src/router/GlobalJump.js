@@ -11,6 +11,7 @@ import BaseBackendPage from '@/components/Backend/BaseBackendPage.vue'
 
 import BackendLogin from '@/components/Backend/BackendLogin.vue'
 
+import ManageRecord from '@/components/Backend/ManageRecord.vue'
 import ManageArticle from '@/components/Backend/ManageArticle.vue'
 import PageArticle from '@/components/Article/PageArticle.vue'
 
@@ -47,9 +48,8 @@ const routes = [
             component: () => import('@/components/Backend/EditArticle.vue')
           },
         ]
-      
       },
-      
+      { path: '/ManageRecord', component: ManageRecord }
     ]
   },
 ]

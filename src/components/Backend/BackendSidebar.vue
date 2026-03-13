@@ -46,6 +46,7 @@
             return {
                 options: [
                     {id:1, name: "文章管理", path: '/ManageArticle'},
+                    {id:2, name: "登录记录", path: '/ManageRecord'},
                 ]
             }
         },
