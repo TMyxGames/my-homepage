@@ -4,7 +4,7 @@
             {{ articleInfo.title }}
         </h1>
         <!-- <span class="upload-time ">
-            {{ articleInfo.uploadTime }}
+            发布时间：{{ formatTime(articleInfo.uploadTime) }}
         </span> -->
     </card-layer>
 </template>
@@ -31,7 +31,12 @@
             }
         },
         methods: {
-            
+            // 格式化日期
+            formatTime(time) {
+                if (!time) return '';
+                return time.replace('T', ' ').substring(0, 16);
+            },
+            // 跳转详情
             toDetail() {
                 this.$router.push(`/PageArticle/${this.articleInfo.id}`);
             }

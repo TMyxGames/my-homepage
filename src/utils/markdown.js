@@ -1,4 +1,5 @@
 import MarkdownIt from 'markdown-it';
+import anchor from 'markdown-it-anchor';
 import mark from 'markdown-it-mark';
 import ins from 'markdown-it-ins';
 import markdownItTaskLists from 'markdown-it-task-lists';
@@ -38,7 +39,13 @@ md.use(container, 'dropcap', {
     }
 
 });
+md.use(anchor, {
+    permalink: false, // 我们不需要在标题后显示链接符号
+    slugify: (s) => encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-')) 
+    // 确保中文标题也能生成合法的 ID
+});
 
+// 自定义规则
 md.renderer.rules.strong_open = () => '<strong><span>';
 md.renderer.rules.strong_close = () => '</span></strong>';
 

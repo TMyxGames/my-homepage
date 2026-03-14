@@ -10,6 +10,7 @@
     
     /* 颜色 */
     --text-hightlight: #fc85ae;
+    --text-strong: #fc85afaa;
     --text-link: #8b2f97;
     --code-bg: rgba(32, 32, 32, 80%);
 
@@ -18,6 +19,9 @@
     --text-danger: #f12b6b;
     --text-warning: #f9c23c;
     --text-success: #07c160;
+
+    /* 间距 */
+    --thin-gap: clamp(1rem, 2vw, 2rem);
 
 }
   
@@ -33,6 +37,7 @@ html.dark {
     
     /* 颜色 */
     --text-hightlight: #7e80ff;
+    --text-strong: #7e80ffaa;
     --text-link: #cf56a1;
     --code-bg: rgba(72, 72, 72, 80%);
 
@@ -75,7 +80,12 @@ html.dark {
 }
 
 @media(max-width: 768px) {
+    :root {
+        --thin-gap: clamp(0.5rem, 1vw, 1rem);
+
+    }
     .bd-h1{
         font-size: 1.4rem;
     }
+    
 }

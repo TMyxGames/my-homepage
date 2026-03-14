@@ -14,13 +14,21 @@
 .bd-markdown h1 {
     font-size: 2.2rem;
     position: relative;
+    text-align: center;
 
-    left: 0.75rem;
+    display: flex;
+    justify-content: center;
+    /* left: 0.75rem; */
 
     color: var(--text-hightlight);
+    transition: all 0.25s ease;
 }
 
-.bd-markdown h1::after {
+.bd-markdown h1:hover {
+    transform: translateY(-0.25rem);
+}
+
+/* .bd-markdown h1::after {
     content: '';
     position: absolute;
     
@@ -32,7 +40,7 @@
 
     background-color: var(--text-hightlight);
     border-radius: 1rem;
-}
+} */
 
 /* 二级标题 */
 .bd-markdown h2 {
@@ -298,7 +306,15 @@
     padding: 0rem 0.2rem;
     border-radius: 0.5rem;
 
+    background-color: var(--text-strong);
+    color: inherit;
+
+    transition: all 0.25s ease;
+}
+
+.bd-markdown mark:hover { 
     background-color: var(--text-hightlight);
+    box-shadow: 0 0 1rem var(--text-hightlight);
     color: inherit;
 }
 
@@ -381,8 +397,8 @@
 }
 
 .bd-markdown .bd-md-figure img:hover { 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 25%);
-    transform: scale(1.025);
+    box-shadow: 0rem 0.5rem 2.5rem -1rem rgba(0, 0, 0, 25%);
+    transform: scale(1.025) translateY(-0.5rem);
 }
 
 /* 隐藏文本 */
