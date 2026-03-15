@@ -367,7 +367,7 @@
     position: absolute;
 
     left: 0.25rem;
-    top: 45%;
+    top: 1.5rem;
     transform: scale(4);
 }
 
@@ -515,3 +515,14 @@
     
 } */
 
+/* 给文章内的主要分段（如 p, h2, pre）设置渲染优化 */
+.bd-markdown > p, 
+.bd-markdown > h2, 
+.bd-markdown > h3, 
+.bd-markdown > pre,
+.bd-markdown > .bd-md-figure {
+    /* 告诉浏览器：如果这个元素不在视口内，先不要布局和绘制它 */
+    content-visibility: auto;
+    /* 预估一个高度，防止滚动条抖动 */
+    contain-intrinsic-size: 1px 200px; 
+}

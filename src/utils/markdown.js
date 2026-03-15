@@ -58,6 +58,7 @@ const defaultRender = md.renderer.rules.image || function(tokens, idx, options, 
 
 md.renderer.rules.image = function (tokens, idx, options, env, self) {
     const token = tokens[idx];
+    token.attrSet('loading', 'lazy');
     const srcIndex = token.attrIndex('src');
     const url = token.attrs[srcIndex][1];
     const caption = md.utils.escapeHtml(token.content); // 提取 alt 文字作为说明
