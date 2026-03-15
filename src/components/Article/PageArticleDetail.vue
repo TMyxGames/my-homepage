@@ -1,7 +1,7 @@
 <template>
     <glass-layer class="article-detail-container">
         <card-layer class="menu-area thin" v-if="!isMobile">
-            <span class="article-title">{{currentArticle?.title}}</span>
+            <!-- <span class="article-title">{{currentArticle?.title}}</span> -->
             <div class="catalog-container">
                 <div 
                     v-for="(item, index) in catalog"
@@ -117,7 +117,7 @@
     }
 
     .catalog-container {
-        margin-top: 1.5rem;
+        /* margin-top: 1.5rem; */
         font-family: '晴雪体', sans-serif;
     }
 
@@ -137,9 +137,9 @@
     }
 
     /* 根据层级缩进 */
-    .level-1 { font-weight: bold; font-size: 1.1rem; }
-    .level-2 { padding-left: 1rem; }
-    .level-3 { padding-left: 2rem; color: #666; font-size: 0.85rem; }
+    .level-1 { font-weight: bold; font-size: 1.2rem; }
+    .level-2 { padding-left: 1rem; font-size: 1.1rem; }
+    .level-3 { padding-left: 2rem; color: #666; font-size: 1rem; }
 
     @media (max-width: 768px) {
         .menu-area {

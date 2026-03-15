@@ -46,6 +46,7 @@
 .bd-markdown h2 {
     font-size: 2rem;
     position: relative;
+    /* overflow: visible !important; */
 
     left: 0.75rem;
 
@@ -350,15 +351,16 @@
 /* 引用 */
 .bd-markdown blockquote { 
     background-color: var(--text-strong);
-    margin: 0;
+    /* margin: 0 auto; */
     padding: 0.25rem 1rem;
     position: relative;
 
     border-radius: 0.5rem;
+    transition: all 0.25s ease;
 }
 
 .bd-markdown blockquote > p { 
-    margin: 0.25rem 2rem;
+    margin: 0.25rem 0 0.25rem 2rem;
     position: relative;
 }
 
@@ -366,7 +368,7 @@
     content: '“';
     position: absolute;
 
-    left: 0.25rem;
+    left: 0.5rem;
     top: 1.5rem;
     transform: scale(4);
 }
@@ -377,11 +379,16 @@
 
     left: 0rem;
     top: 0rem;
-    width: 0.5rem;
+    width: 0.75rem;
     height: 100%;
 
-    border-radius: 0.25rem 0rem 0rem 0.25rem;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
     background-color: var(--text-hightlight);
+}
+
+.bd-markdown blockquote:hover { 
+    background-color: var(--text-hightlight);
+    box-shadow: 0 0 1rem var(--text-hightlight);
 }
 
 /* 图片容器 */
@@ -446,7 +453,7 @@
         rgba(255, 0, 0, 1) 100%
     );
     background-size: 200% 100%;
-    animation: rainbow-flow 5s linear infinite;
+    animation: rainbow-flow 2.5s linear infinite;
     box-shadow: 0 0 10rem rgba(255, 255, 255, 0.5),
                 0 0 10rem rgba(255, 255, 255, 0.5);
     
@@ -467,27 +474,28 @@
 .bd-markdown ul {
     list-style: none;
     padding-left: 1.5rem;
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
 }
 
 .bd-markdown ul li {
     position: relative;
-    line-height: 1.8;
-    margin-bottom: 0.5rem;
     color: var(--text-color);
 }
 
 .bd-markdown ul li::before {
     content: "";
     position: absolute;
+
+    width: 0.5rem;
+    height: 0.5rem;
     left: -1.2rem;
-    top: 0.6rem;
-    width: 6px;
-    height: 6px;
-    background-color: var(--text-hightlight); /* 使用你的主题色 */
-    border-radius: 50%; /* 圆形 */
-    box-shadow: 0 0 5px var(--text-hightlight); /* 增加一点发光感 */
-    transition: transform 0.3s ease;
+    top: 50%;
+
+    transform: translateY(-50%);
+    background-color: var(--text-hightlight);
+    border-radius: 50%;
+    box-shadow: 0 0 0.5rem var(--text-hightlight);
+    transition: transform 0.25s ease;
 }
 
 /* 隐藏文本 */
@@ -517,13 +525,13 @@
 } */
 
 /* 给文章内的主要分段（如 p, h2, pre）设置渲染优化 */
-.bd-markdown > p, 
+/* .bd-markdown > p, 
 .bd-markdown > h2, 
 .bd-markdown > h3, 
 .bd-markdown > pre,
-.bd-markdown > .bd-md-figure {
+.bd-markdown > .bd-md-figure { */
     /* 告诉浏览器：如果这个元素不在视口内，先不要布局和绘制它 */
-    content-visibility: auto;
+    /* content-visibility: auto; */
     /* 预估一个高度，防止滚动条抖动 */
-    contain-intrinsic-size: 1px 200px; 
-}
+    /* contain-intrinsic-size: 1px 200px;  */
+/* } */
