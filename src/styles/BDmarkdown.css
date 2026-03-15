@@ -349,16 +349,39 @@
 
 /* 引用 */
 .bd-markdown blockquote { 
-    font-style: italic;
-
+    background-color: var(--text-strong);
+    margin: 0;
+    padding: 0.25rem 1rem;
     position: relative;
 
-    /* background-color: var(--code-bg); */
+    border-radius: 0.5rem;
+}
+
+.bd-markdown blockquote > p { 
+    margin: 0.25rem 2rem;
+    position: relative;
 }
 
 .bd-markdown blockquote::before { 
+    content: '“';
+    position: absolute;
+
+    left: 0.25rem;
+    top: 45%;
+    transform: scale(4);
+}
+
+.bd-markdown blockquote::after { 
     content: '';
     position: absolute;
+
+    left: 0rem;
+    top: 0rem;
+    width: 0.5rem;
+    height: 100%;
+
+    border-radius: 0.25rem 0rem 0rem 0.25rem;
+    background-color: var(--text-hightlight);
 }
 
 /* 图片容器 */
@@ -396,9 +419,74 @@
     padding: 0 1rem;
 }
 
+/* 图片悬停效果 */
 .bd-markdown .bd-md-figure img:hover { 
     box-shadow: 0rem 0.5rem 2.5rem -1rem rgba(0, 0, 0, 25%);
     transform: scale(1.025) translateY(-0.5rem);
+}
+
+/* 分割线 */
+.bd-markdown hr { 
+    border: none;
+    height: 0.2rem;
+    border-radius: 0.1rem;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    background-size: 200% 100%;
+    animation: rainbow-flow 5s linear infinite;
+    box-shadow: 0 0 10rem rgba(255, 255, 255, 0.5),
+                0 0 10rem rgba(255, 255, 255, 0.5);
+    
+    opacity: 0.8;
+}
+
+/* 分割线动画 */
+@keyframes rainbow-flow {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
+
+/* 无序列表 */
+.bd-markdown ul {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.bd-markdown ul li {
+    position: relative;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.bd-markdown ul li::before {
+    content: "";
+    position: absolute;
+    left: -1.2rem;
+    top: 0.6rem;
+    width: 6px;
+    height: 6px;
+    background-color: var(--text-hightlight); /* 使用你的主题色 */
+    border-radius: 50%; /* 圆形 */
+    box-shadow: 0 0 5px var(--text-hightlight); /* 增加一点发光感 */
+    transition: transform 0.3s ease;
 }
 
 /* 隐藏文本 */
